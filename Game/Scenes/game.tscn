@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://f8grf4gkunji"]
+[gd_scene load_steps=10 format=3 uid="uid://f8grf4gkunji"]
 
 [ext_resource type="Script" path="res://Game/Scripts/game.gd" id="1_e1icw"]
 [ext_resource type="PackedScene" uid="uid://bohw3vx2x6mt8" path="res://Objects/Scenes/platform.tscn" id="2_23gpi"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://5xnwu4g2he6c" path="res://Objects/Scenes/camera_2d.tscn" id="4_n7vlc"]
 [ext_resource type="PackedScene" uid="uid://c1djivfdelnlw" path="res://Objects/Scenes/water.tscn" id="5_1sppn"]
 [ext_resource type="PackedScene" uid="uid://c6mmueecdubb" path="res://Objects/Scenes/sobreiro.tscn" id="5_gwsvk"]
+[ext_resource type="PackedScene" uid="uid://d2ipawn00pm2x" path="res://Objects/Scenes/wine.tscn" id="6_i1afw"]
 [ext_resource type="Texture2D" uid="uid://bn0moyd2ikiyt" path="res://Assets/Sprites/Background.png" id="6_vnts5"]
 
 [sub_resource type="Curve2D" id="Curve2D_lbvoq"]
@@ -20,6 +21,7 @@ platform_scene = ExtResource("2_23gpi")
 player_scene = ExtResource("3_il2mn")
 water_scene = ExtResource("5_1sppn")
 sobreiro_scene = ExtResource("5_gwsvk")
+wine_scene = ExtResource("6_i1afw")
 
 [node name="PlatformPath" type="Path2D" parent="."]
 position = Vector2(0, 1200)
