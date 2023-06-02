@@ -11,8 +11,6 @@ size = Vector2(128, 128)
 
 [node name="Player" parent="." instance=ExtResource("1_o87p1")]
 position = Vector2(549, 316)
-life = 100.0
-lifeLossPerSec = 1.0
 
 [node name="Platforms" type="Node2D" parent="."]
 position = Vector2(-392, 363)

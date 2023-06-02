@@ -4,6 +4,7 @@ var player = null
 @export var maxY: float
 
 signal restartGame
+signal spawnPlatforms(number_of_platforms: int, spawn_player: bool)
 
 var firstTime = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -13,10 +14,9 @@ func _process(delta):
 		return
 	if firstTime:
 		firstTimeSet()
+	if player.get_node("PlayerBody") == null:
+		return
 	var nextY = player.get_node("PlayerBody").get_global_position().y
-	if nextY > self.position.y + (get_viewport_rect().size.y / 2) + 200:
-		print("Lose")
-		restartGame.emit()
 	if nextY < maxY:
 		self.position.y = nextY
 		maxY = nextY
@@ -31,4 +31,10 @@ func firstTimeSet():
 	var nextLimit = self.position.y + (get_viewport_rect().size.y / 2)
 	self.limit_bottom = self.position.y + (get_viewport_rect().size.y / 2)
 	firstTime = false
-	
+
+func restartGameFunc():
+	restartGame.emit()
+
+
+func _on_area_2d_spawn_platforms(number_of_platforms):
+	spawnPlatforms.emit(1, false)
