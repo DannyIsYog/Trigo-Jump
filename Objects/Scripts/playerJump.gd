@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var direction: int
 @onready var Sprite : Sprite2D = $Sprite2D
 @onready var animationTree : AnimationTree = $AnimationTree
+@onready var jumpSound = $AudioStreamPlayer2D
 
 func _physics_process(delta):
 	# Add gravity every frame
@@ -22,6 +23,7 @@ func _physics_process(delta):
 	# Only allow jumping when on the ground
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_speed
+		jumpSound.play()
 	
 func _ready():
 	animationTree.active = true
