@@ -10,7 +10,8 @@ extends CharacterBody2D
 @onready var animationTree : AnimationTree = $AnimationTree
 @onready var jumpSound = $JumpSound
 @onready var drinkingSound = $Drinking
-
+@onready var jumpParticles = $JumpParticles
+@onready var WineSound = $Winee
 
 func is_drunk() -> bool:
 	return get_parent().is_drunk()
@@ -34,7 +35,11 @@ func _physics_process(delta):
 		velocity.y = jump_speed
 		animationTree.set("parameters/conditions/IsJumping", true)
 		animationTree.set("parameters/conditions/IsNotJumping", false)
+<<<<<<< Updated upstream
 		jumpSound.pitch_scale = randf_range(0.5, 1.5)
+=======
+		jumpParticles.restart()
+>>>>>>> Stashed changes
 		jumpSound.play()
 	if Input.is_action_just_pressed("down") and not is_on_floor():
 		velocity.y = -jump_speed
