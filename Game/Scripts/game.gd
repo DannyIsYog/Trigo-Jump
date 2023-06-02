@@ -10,7 +10,7 @@ var last_platform_x = 0
 
 func _ready() -> void:
 	randomize()
-	spawn_platforms(20, true)
+	spawn_platforms(10, true)
 
 
 func spawn_platforms(amount: int, spawn_player: bool = false) -> void:

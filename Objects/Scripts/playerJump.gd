@@ -1,3 +1,4 @@
+class_name PlayerBody
 extends CharacterBody2D
 
 @export var speed: int
