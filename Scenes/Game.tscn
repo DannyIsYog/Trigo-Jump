@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://f8grf4gkunji"]
+[gd_scene load_steps=6 format=3 uid="uid://f8grf4gkunji"]
 
 [ext_resource type="Script" path="res://Scenes/Game.gd" id="1_bhlk3"]
 [ext_resource type="PackedScene" uid="uid://bohw3vx2x6mt8" path="res://Scenes/Platform.tscn" id="2_h0hfd"]
+[ext_resource type="Texture2D" uid="uid://bn0moyd2ikiyt" path="res://Assets/Sprites/Background.png" id="3_obkat"]
 
 [sub_resource type="Curve2D" id="Curve2D_lbvoq"]
 _data = {
@@ -34,3 +35,12 @@ curve = SubResource("Curve2D_h5rls")
 position = Vector2(0, 256)
 
 [node name="Platforms" type="Node" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(0.666667, 0.666667)
+texture = ExtResource("3_obkat")
+centered = false
