@@ -4,12 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://88wriiuxap06" path="res://Assets/Sprites/sobreiro.png" id="2_60l5j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbtor"]
-size = Vector2(128, 128)
+size = Vector2(330, 200)
 
 [node name="Sobreiro" type="Area2D"]
 script = ExtResource("1_6d807")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(55, -30)
 shape = SubResource("RectangleShape2D_jbtor")
 
 [node name="Icon" type="Sprite2D" parent="."]

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Objects/Scripts/destroyArea.gd" id="2_yen3t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okfqs"]
-size = Vector2(803, 203)
+size = Vector2(7792, 203)
 
 [node name="Camera2D" type="Camera2D"]
 limit_left = 0
