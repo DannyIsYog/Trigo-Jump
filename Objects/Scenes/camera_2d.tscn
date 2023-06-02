@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Objects/Scripts/destroyArea.gd" id="2_yen3t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okfqs"]
-size = Vector2(803, 203)
+size = Vector2(11328, 203)
 
 [node name="Camera2D" type="Camera2D"]
 limit_left = 0
@@ -15,7 +15,7 @@ script = ExtResource("1_5j68l")
 script = ExtResource("2_yen3t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(350, 809)
+position = Vector2(1857, 809)
 shape = SubResource("RectangleShape2D_okfqs")
 
 [node name="Control" type="Control" parent="."]
@@ -37,6 +37,7 @@ theme_override_font_sizes/normal_font_size = 40
 text = "300m"
 
 [node name="waterBar" type="ProgressBar" parent="Control"]
+modulate = Color(0.0745098, 0.270588, 1, 1)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
