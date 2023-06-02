@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://f8grf4gkunji"]
+[gd_scene load_steps=9 format=3 uid="uid://f8grf4gkunji"]
 
 [ext_resource type="Script" path="res://Game/Scripts/game.gd" id="1_e1icw"]
 [ext_resource type="PackedScene" uid="uid://bohw3vx2x6mt8" path="res://Objects/Scenes/platform.tscn" id="2_23gpi"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://5xnwu4g2he6c" path="res://Objects/Scenes/camera_2d.tscn" id="4_n7vlc"]
 [ext_resource type="PackedScene" uid="uid://c1djivfdelnlw" path="res://Objects/Scenes/water.tscn" id="5_1sppn"]
 [ext_resource type="PackedScene" uid="uid://c6mmueecdubb" path="res://Objects/Scenes/sobreiro.tscn" id="5_gwsvk"]
+[ext_resource type="Texture2D" uid="uid://bn0moyd2ikiyt" path="res://Assets/Sprites/Background.png" id="6_vnts5"]
 
 [sub_resource type="Curve2D" id="Curve2D_lbvoq"]
 _data = {
@@ -29,6 +30,11 @@ curve = SubResource("Curve2D_lbvoq")
 [node name="Platforms" type="Node" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground"]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_vnts5")
+centered = false
 
 [node name="Camera2D" parent="." instance=ExtResource("4_n7vlc")]
 position = Vector2(-1, 390)
