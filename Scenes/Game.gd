@@ -3,6 +3,7 @@ extends Node2D
 @export var platform_scene: PackedScene
 
 func _ready() -> void:
+	randomize()
 	spawn_platforms()
 
 
