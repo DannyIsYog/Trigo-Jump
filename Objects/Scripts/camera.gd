@@ -3,8 +3,12 @@ extends Camera2D
 var player = null
 @export var maxY: float
 
+var startingY: float
+@onready var text = $Control/ScoreText
+
 signal restartGame
 signal spawnPlatforms(number_of_platforms: int, spawn_player: bool)
+signal updateScore(score: int)
 
 var firstTime = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,6 +27,7 @@ func _process(delta):
 	var nextLimit = self.position.y + (get_viewport_rect().size.y / 2)
 	if nextLimit < self.limit_bottom :
 		self.limit_bottom = self.position.y + (get_viewport_rect().size.y / 2)
+	text.text = str(int((startingY - maxY)/50))
 
 func firstTimeSet():
 	var nextY = player.get_node("PlayerBody").get_global_position().y
@@ -30,6 +35,7 @@ func firstTimeSet():
 	maxY = nextY
 	var nextLimit = self.position.y + (get_viewport_rect().size.y / 2)
 	self.limit_bottom = self.position.y + (get_viewport_rect().size.y / 2)
+	startingY = nextY
 	firstTime = false
 
 func restartGameFunc():

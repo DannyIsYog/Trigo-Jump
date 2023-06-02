@@ -4,7 +4,7 @@ extends Node2D
 @export var life: float
 @export var lifeLossPerSec: float
 
-@onready var waterBar = $"../Camera2D/waterBar"
+@onready var waterBar = $"../Camera2D/Control/waterBar"
 
 var sobreiro = false
 
