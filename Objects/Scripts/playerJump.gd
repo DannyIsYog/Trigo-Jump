@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var jump_speed: int
 @export var gravity: int
 @export var direction: int
+@onready var Sprite : Sprite2D = $Sprite2D
+@onready var animationTree : AnimationTree = $AnimationTree
 
 func _physics_process(delta):
 	# Add gravity every frame
@@ -13,8 +15,21 @@ func _physics_process(delta):
 	velocity.x = Input.get_axis("left", "right") * speed
 	
 	move_and_slide()
+	update_animation()
+	update_facing_direction()
 
 	# Only allow jumping when on the ground
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_speed
-
+	
+func _ready():
+	animationTree.active = true
+	
+func update_facing_direction():
+	if direction > 0:
+		Sprite.flip_h = false
+	if direction < 0:
+		Sprite.flip_h = true
+		
+func update_animation():
+	animationTree.set("parameters/Move/blend_position", direction)
