@@ -6,6 +6,9 @@ extends Node2D
 
 @onready var waterBar = $"../Camera2D/waterBar"
 
+var sobreiro = false
+
 func _process(delta):
-	life = life - lifeLossPerSec * delta
+	if not sobreiro:
+		life = life - lifeLossPerSec * delta
 	waterBar.value = life

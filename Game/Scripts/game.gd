@@ -3,6 +3,7 @@ extends Node2D
 @export var platform_scene: PackedScene
 @export var player_scene: PackedScene
 @export var water_scene: PackedScene
+@export var sobreiro_scene: PackedScene
 
 @export var spawn_water_prob = 0.45
 
@@ -42,6 +43,11 @@ func spawn_platforms(amount: int, spawn_player: bool = false) -> void:
 			water.position.x = platform.position.x + 64
 			water.position.y = platform_initial_y - 64
 			add_child(water)
+		elif randf() <= 0.2:
+			var sobreiro = sobreiro_scene.instantiate() as Node2D
+			sobreiro.position.x = platform.position.x + 64
+			sobreiro.position.y = platform_initial_y - 64
+			add_child(sobreiro)
 
 func restart():
 	get_tree().reload_current_scene()
