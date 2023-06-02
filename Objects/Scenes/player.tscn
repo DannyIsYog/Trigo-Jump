@@ -150,8 +150,3 @@ libraries = {
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PlayerBody"]
 stream = ExtResource("10_qjwif")
-
-[node name="CharacterBody2D@Camera2D" type="Camera2D" parent="."]
-position = Vector2(87, -6)
-limit_left = 0
-limit_right = 720
