@@ -37,6 +37,7 @@ theme_override_font_sizes/normal_font_size = 40
 text = "300m"
 
 [node name="waterBar" type="ProgressBar" parent="Control"]
+modulate = Color(0, 0, 1, 1)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
