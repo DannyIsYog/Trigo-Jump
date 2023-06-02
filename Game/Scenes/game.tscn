@@ -16,6 +16,7 @@ point_count = 2
 script = ExtResource("1_e1icw")
 platform_scene = ExtResource("2_23gpi")
 player_scene = ExtResource("3_il2mn")
+water_scene = ExtResource("5_1sppn")
 
 [node name="PlatformPath" type="Path2D" parent="."]
 position = Vector2(0, 1200)
@@ -31,5 +32,3 @@ curve = SubResource("Curve2D_lbvoq")
 position = Vector2(-1, 390)
 
 [connection signal="restartGame" from="Camera2D" to="." method="restart"]
-[node name="Water" parent="." instance=ExtResource("5_1sppn")]
-position = Vector2(242, 178)

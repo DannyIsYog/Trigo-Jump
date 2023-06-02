@@ -117,7 +117,7 @@ _data = {
 [node name="Player" type="Node2D"]
 script = ExtResource("1_evdqh")
 life = 100.0
-lifeLossPerSec = 1.0
+lifeLossPerSec = 3.0
 
 [node name="PlayerBody" type="CharacterBody2D" parent="."]
 disable_mode = 2

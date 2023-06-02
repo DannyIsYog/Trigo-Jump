@@ -2,6 +2,9 @@ extends Node2D
 
 @export var platform_scene: PackedScene
 @export var player_scene: PackedScene
+@export var water_scene: PackedScene
+
+@export var spawn_water_prob = 0.45
 
 @onready var platforms = $Platforms
 @onready var platform_spawn = $PlatformPath/Spawn
@@ -10,12 +13,12 @@ var last_platform_x = 0
 
 func _ready() -> void:
 	randomize()
-	spawn_platforms(10, true)
+	spawn_platforms(20, true)
 
 
 func spawn_platforms(amount: int, spawn_player: bool = false) -> void:
 	for i in range(amount):
-		platform_initial_y -= randi_range(256, 360)
+		platform_initial_y -= randi_range(270, 360)
 		var platform = platform_scene.instantiate() as Node2D
 		
 		platform_spawn.progress_ratio = randf()
@@ -34,6 +37,11 @@ func spawn_platforms(amount: int, spawn_player: bool = false) -> void:
 			player.position.x = platform.position.x + 64
 			player.position.y = platform_initial_y - 64
 			add_child(player)
+		elif randf() <= spawn_water_prob:
+			var water = water_scene.instantiate() as Node2D
+			water.position.x = platform.position.x + 64
+			water.position.y = platform_initial_y - 64
+			add_child(water)
 
 func restart():
 	get_tree().reload_current_scene()
