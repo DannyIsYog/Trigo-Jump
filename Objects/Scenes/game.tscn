@@ -27,4 +27,4 @@ curve = SubResource("Curve2D_lbvoq")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Camera2D" parent="." instance=ExtResource("4_d7h2j")]
-maxY = -200.0
+position = Vector2(-1, 390)
