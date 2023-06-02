@@ -6,6 +6,8 @@ var player = null
 var startingY: float
 @onready var text = $Control/ScoreText
 
+var score: int
+
 signal restartGame
 signal spawnPlatforms(number_of_platforms: int, spawn_player: bool)
 signal updateScore(score: int)
@@ -27,7 +29,11 @@ func _process(delta):
 	var nextLimit = self.position.y + (get_viewport_rect().size.y / 2)
 	if nextLimit < self.limit_bottom :
 		self.limit_bottom = self.position.y + (get_viewport_rect().size.y / 2)
-	text.text = str(int((startingY - maxY)/50))
+	
+	score = int((startingY - maxY)/50)
+	player.lifeLossPerSec = 3 + score/50
+	print(player.lifeLossPerSec)
+	text.text = str(score)
 
 func firstTimeSet():
 	var nextY = player.get_node("PlayerBody").get_global_position().y
