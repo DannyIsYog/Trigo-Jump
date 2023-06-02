@@ -44,17 +44,17 @@ func spawn_platforms(amount: int, spawn_player: bool = false) -> void:
 			var water = water_scene.instantiate() as Node2D
 			water.position.x = platform.position.x + 64
 			water.position.y = platform_initial_y - 64
-			add_child(water)
+			platforms.add_child(water)
 		elif randf() <= 0.4:
 			var sobreiro = sobreiro_scene.instantiate() as Node2D
 			sobreiro.position.x = platform.position.x + 64
 			sobreiro.position.y = platform_initial_y - 64
-			add_child(sobreiro)
+			platforms.add_child(sobreiro)
 		elif randf() <= 0.4:
 			var wine = wine_scene.instantiate() as Node2D
 			wine.position.x = platform.position.x + 64
 			wine.position.y = platform_initial_y - 64
-			add_child(wine)
+			platforms.add_child(wine)
 
 func restart(score):
 	get_parent().endGame(score, self)
