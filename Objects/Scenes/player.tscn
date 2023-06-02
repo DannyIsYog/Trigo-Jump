@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dhx0p78rsq1t3"]
+[gd_scene load_steps=30 format=3 uid="uid://dhx0p78rsq1t3"]
 
 [ext_resource type="Script" path="res://playerData.gd" id="1_0rie8"]
 [ext_resource type="Script" path="res://Objects/Scripts/playerJump.gd" id="2_sir8c"]
@@ -10,9 +10,16 @@
 [ext_resource type="Texture2D" uid="uid://dvn6rop6uqp2o" path="res://Assets/Sprites/land.png" id="6_anjub"]
 [ext_resource type="Texture2D" uid="uid://vo1o81elhscf" path="res://Assets/Sprites/walk1.png" id="8_8s6e4"]
 [ext_resource type="AudioStream" uid="uid://dxgadne4udv1t" path="res://Assets/Audio/jump.wav" id="10_qjwif"]
+[ext_resource type="AudioStream" uid="uid://yynqtl0mlvxw" path="res://Assets/Audio/Drinking.wav" id="11_r51jy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fq2v"]
 size = Vector2(172.797, 201.939)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2bqas"]
+animation = &"Jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f56fv"]
+animation = &"Land"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_npy5w"]
 animation = &"Idle"
@@ -35,12 +42,29 @@ blend_mode = 1
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_72fa7"]
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e15lg"]
+advance_mode = 2
+advance_condition = &"IsJumping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jas7t"]
+advance_mode = 2
+advance_condition = &"IsNotJumping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o0506"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"IsNotJumping"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lotsw"]
+states/Jump/node = SubResource("AnimationNodeAnimation_2bqas")
+states/Jump/position = Vector2(367, 30)
+states/Land/node = SubResource("AnimationNodeAnimation_f56fv")
+states/Land/position = Vector2(562, 30)
 states/Move/node = SubResource("AnimationNodeBlendSpace1D_i8fan")
 states/Move/position = Vector2(367, 100)
 states/Start/position = Vector2(183, 100)
-transitions = ["Start", "Move", SubResource("AnimationNodeStateMachineTransition_72fa7")]
-graph_offset = Vector2(-47, 29)
+transitions = ["Start", "Move", SubResource("AnimationNodeStateMachineTransition_72fa7"), "Move", "Jump", SubResource("AnimationNodeStateMachineTransition_e15lg"), "Jump", "Land", SubResource("AnimationNodeStateMachineTransition_jas7t"), "Land", "Move", SubResource("AnimationNodeStateMachineTransition_o0506")]
+graph_offset = Vector2(-106, -35)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_kro60"]
 
@@ -62,10 +86,11 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_7gtvl"]
 resource_name = "Jump"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/Sprite2D:texture")
+tracks/0/path = NodePath("PlayerBody/Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -80,7 +105,7 @@ resource_name = "Land"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/Sprite2D:texture")
+tracks/0/path = NodePath("PlayerBody/Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -115,10 +140,15 @@ _data = {
 "Walk": SubResource("Animation_lj6y2")
 }
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" node_paths=PackedStringArray("animation_tree")]
 script = ExtResource("1_0rie8")
 life = 100.0
+<<<<<<< Updated upstream
 lifeLossPerSec = 3.0
+=======
+lifeLossPerSec = 8.0
+animation_tree = NodePath("PlayerBody/AnimationTree")
+>>>>>>> Stashed changes
 
 [node name="PlayerBody" type="CharacterBody2D" parent="."]
 disable_mode = 2
@@ -130,7 +160,7 @@ gravity = 4000
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerBody"]
 scale = Vector2(0.131005, 0.131005)
-texture = ExtResource("4_4a4qb")
+texture = ExtResource("3_mhqon")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBody"]
 position = Vector2(0, 10.5)
@@ -141,7 +171,9 @@ shape = SubResource("RectangleShape2D_3fq2v")
 tree_root = SubResource("AnimationNodeStateMachine_lotsw")
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_kro60")
-parameters/Move/blend_position = 0.996997
+parameters/conditions/IsJumping = false
+parameters/conditions/IsNotJumping = false
+parameters/Move/blend_position = 0.995495
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerBody"]
 root_node = NodePath("../..")
@@ -150,5 +182,8 @@ libraries = {
 "": SubResource("AnimationLibrary_q1rx0")
 }
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PlayerBody"]
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="PlayerBody"]
 stream = ExtResource("10_qjwif")
+
+[node name="Drinking" type="AudioStreamPlayer2D" parent="PlayerBody"]
+stream = ExtResource("11_r51jy")

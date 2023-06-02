@@ -3,10 +3,15 @@ extends Node2D
 
 @export var life: float
 @export var lifeLossPerSec: float
+<<<<<<< Updated upstream
 
 @onready var waterBar = $"../Camera2D/Control/waterBar"
 
 @onready var gameManager = get_parent()
+=======
+@export var animation_tree : AnimationTree
+@onready var waterBar = $"../Camera2D/waterBar"
+>>>>>>> Stashed changes
 
 var sobreiro = false
 var drunk_for = 0.0
