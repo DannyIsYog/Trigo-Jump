@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dhx0p78rsq1t3"]
+[gd_scene load_steps=40 format=3 uid="uid://dhx0p78rsq1t3"]
 
 [ext_resource type="Script" path="res://playerData.gd" id="1_0rie8"]
 [ext_resource type="Script" path="res://Objects/Scripts/playerJump.gd" id="2_sir8c"]
@@ -9,8 +9,40 @@
 [ext_resource type="Texture2D" uid="uid://boa1e2mt00roo" path="res://Assets/Sprites/Idle3.png" id="6_1aqnr"]
 [ext_resource type="Texture2D" uid="uid://dvn6rop6uqp2o" path="res://Assets/Sprites/land.png" id="6_anjub"]
 [ext_resource type="Texture2D" uid="uid://vo1o81elhscf" path="res://Assets/Sprites/walk1.png" id="8_8s6e4"]
-[ext_resource type="AudioStream" uid="uid://dxgadne4udv1t" path="res://Assets/Audio/jump.wav" id="10_qjwif"]
+[ext_resource type="Texture2D" uid="uid://bq21cuwqg8yit" path="res://Assets/Sprites/jump2.png" id="8_rmmjj"]
+[ext_resource type="Texture2D" uid="uid://bqoe2o1xto28r" path="res://Assets/Sprites/land2.png" id="10_ptnbn"]
 [ext_resource type="AudioStream" uid="uid://yynqtl0mlvxw" path="res://Assets/Audio/Drinking.wav" id="11_r51jy"]
+[ext_resource type="Texture2D" uid="uid://c7r4yhvkb7yg7" path="res://Assets/Sprites/walk6.png" id="12_dmykx"]
+[ext_resource type="Texture2D" uid="uid://c1ecdudsvv75" path="res://Assets/Sprites/walk3.png" id="13_fmws2"]
+[ext_resource type="Texture2D" uid="uid://blnejus7ui4g2" path="res://Assets/Sprites/walk4.png" id="14_m6kso"]
+[ext_resource type="Texture2D" uid="uid://bbessukles0oq" path="res://Assets/Sprites/walk5.png" id="15_u14fx"]
+[ext_resource type="AudioStream" uid="uid://dw1n3748wrrrn" path="res://Assets/Audio/better jump sound.wav" id="16_pdxnx"]
+[ext_resource type="AudioStream" uid="uid://rawyqf5ihpvq" path="res://Assets/Audio/wine sound.wav" id="17_p8e4q"]
+
+[sub_resource type="Curve" id="Curve_bqelw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.172727), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ti4c8"]
+curve = SubResource("Curve_bqelw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m0ila"]
+emission_shape = 3
+emission_box_extents = Vector3(40, 1, 0)
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, -90, 0)
+initial_velocity_min = 10.53
+initial_velocity_max = 10.53
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+radial_accel_min = -12.63
+radial_accel_max = -8.42
+angle_min = -197.0
+angle_max = 106.2
+scale_min = 3.0
+scale_max = 8.0
+scale_curve = SubResource("CurveTexture_ti4c8")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fq2v"]
 size = Vector2(172.797, 201.939)
@@ -64,7 +96,7 @@ states/Move/node = SubResource("AnimationNodeBlendSpace1D_i8fan")
 states/Move/position = Vector2(367, 100)
 states/Start/position = Vector2(183, 100)
 transitions = ["Start", "Move", SubResource("AnimationNodeStateMachineTransition_72fa7"), "Move", "Jump", SubResource("AnimationNodeStateMachineTransition_e15lg"), "Jump", "Land", SubResource("AnimationNodeStateMachineTransition_jas7t"), "Land", "Move", SubResource("AnimationNodeStateMachineTransition_o0506")]
-graph_offset = Vector2(-106, -35)
+graph_offset = Vector2(-77, -5)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_kro60"]
 
@@ -86,7 +118,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_7gtvl"]
 resource_name = "Jump"
+length = 0.3
 loop_mode = 1
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -94,14 +128,16 @@ tracks/0/path = NodePath("PlayerBody/Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("3_mhqon")]
+"values": [ExtResource("3_mhqon"), ExtResource("8_rmmjj")]
 }
 
 [sub_resource type="Animation" id="Animation_q16w7"]
 resource_name = "Land"
+length = 0.3
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -109,10 +145,10 @@ tracks/0/path = NodePath("PlayerBody/Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("6_anjub")]
+"values": [ExtResource("6_anjub"), ExtResource("10_ptnbn")]
 }
 
 [sub_resource type="Animation" id="Animation_lj6y2"]
@@ -126,10 +162,10 @@ tracks/0/path = NodePath("PlayerBody/Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("8_8s6e4"), ExtResource("3_ioeh0")]
+"values": [ExtResource("8_8s6e4"), ExtResource("3_ioeh0"), ExtResource("12_dmykx"), ExtResource("13_fmws2"), ExtResource("14_m6kso"), ExtResource("15_u14fx")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q1rx0"]
@@ -154,9 +190,16 @@ jump_speed = -1800
 gravity = 4000
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerBody"]
-z_index = 1
 scale = Vector2(0.131005, 0.131005)
-texture = ExtResource("3_mhqon")
+texture = ExtResource("8_8s6e4")
+
+[node name="JumpParticles" type="GPUParticles2D" parent="PlayerBody"]
+position = Vector2(0, 102)
+emitting = false
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_m0ila")
+one_shot = true
+explosiveness = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBody"]
 position = Vector2(0, 10.5)
@@ -179,7 +222,11 @@ libraries = {
 }
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="PlayerBody"]
-stream = ExtResource("10_qjwif")
+stream = ExtResource("16_pdxnx")
+
+[node name="Winee" type="AudioStreamPlayer2D" parent="PlayerBody"]
+stream = ExtResource("17_p8e4q")
+volume_db = 4.844
 
 [node name="Drinking" type="AudioStreamPlayer2D" parent="PlayerBody"]
 stream = ExtResource("11_r51jy")

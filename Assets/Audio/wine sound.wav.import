@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://rawyqf5ihpvq"
+path="res://.godot/imported/wine sound.wav-0f6d8eb4757931b229076d9c4764fa72.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/wine sound.wav"
+dest_files=["res://.godot/imported/wine sound.wav-0f6d8eb4757931b229076d9c4764fa72.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
