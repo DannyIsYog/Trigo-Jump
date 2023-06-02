@@ -3,6 +3,8 @@ extends Camera2D
 var player = null
 @export var maxY: float
 
+signal restartGame
+
 var firstTime = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -12,6 +14,9 @@ func _process(delta):
 	if firstTime:
 		firstTimeSet()
 	var nextY = player.get_node("PlayerBody").get_global_position().y
+	if nextY > self.position.y + (get_viewport_rect().size.y / 2) + 200:
+		print("Lose")
+		restartGame.emit()
 	if nextY < maxY:
 		self.position.y = nextY
 		maxY = nextY

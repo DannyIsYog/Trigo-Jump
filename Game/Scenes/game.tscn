@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://f8grf4gkunji"]
+
+[ext_resource type="Script" path="res://Game/Scripts/game.gd" id="1_e1icw"]
+[ext_resource type="PackedScene" uid="uid://bohw3vx2x6mt8" path="res://Objects/Scenes/platform.tscn" id="2_23gpi"]
+[ext_resource type="PackedScene" uid="uid://dhx0p78rsq1t3" path="res://Objects/Scenes/player.tscn" id="3_il2mn"]
+[ext_resource type="PackedScene" uid="uid://5xnwu4g2he6c" path="res://Objects/Scenes/camera_2d.tscn" id="4_n7vlc"]
+
+[sub_resource type="Curve2D" id="Curve2D_lbvoq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 640, 0)
+}
+point_count = 2
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_e1icw")
+platform_scene = ExtResource("2_23gpi")
+player_scene = ExtResource("3_il2mn")
+
+[node name="PlatformPath" type="Path2D" parent="."]
+position = Vector2(0, 1200)
+curve = SubResource("Curve2D_lbvoq")
+
+[node name="Spawn" type="PathFollow2D" parent="PlatformPath"]
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Camera2D" parent="." instance=ExtResource("4_n7vlc")]
+position = Vector2(-1, 390)
+
+[connection signal="restartGame" from="Camera2D" to="." method="restart"]

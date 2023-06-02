@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhx0p78rsq1t3"]
 
-[ext_resource type="Script" path="res://playerData.gd" id="1_0rie8"]
+[ext_resource type="Script" path="res://Objects/Scripts/playerData.gd" id="1_evdqh"]
 [ext_resource type="Script" path="res://Objects/Scripts/playerJump.gd" id="2_sir8c"]
 [ext_resource type="Texture2D" uid="uid://cnwwtj2b6xnsa" path="res://Assets/Sprites/trigoMan.png" id="3_7mycq"]
 
@@ -8,7 +8,9 @@
 size = Vector2(128, 128)
 
 [node name="Player" type="Node2D"]
-script = ExtResource("1_0rie8")
+script = ExtResource("1_evdqh")
+life = 100.0
+lifeLossPerSec = 1.0
 
 [node name="PlayerBody" type="CharacterBody2D" parent="."]
 disable_mode = 2
