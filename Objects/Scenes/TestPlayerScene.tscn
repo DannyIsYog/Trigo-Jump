@@ -1,15 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://b0sg7v1xg1m2a"]
 
-[ext_resource type="PackedScene" uid="uid://dhx0p78rsq1t3" path="res://Objects/Scenes/player.tscn" id="1_rdgwo"]
-[ext_resource type="Texture2D" uid="uid://bsrwdlpixkaef" path="res://icon.svg" id="2_b1an3"]
+[ext_resource type="PackedScene" uid="uid://dhx0p78rsq1t3" path="res://Objects/Scenes/player.tscn" id="1_rsdyp"]
+[ext_resource type="Texture2D" uid="uid://bsrwdlpixkaef" path="res://icon.svg" id="2_wc7mw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ut8vy"]
 size = Vector2(128, 128)
 
 [node name="TestPlayerScene" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_rdgwo")]
+[node name="Player" parent="." instance=ExtResource("1_rsdyp")]
 position = Vector2(264, 665)
+life = 100.0
+lifeLossPerSec = 1.0
 
 [node name="Platforms" type="Node2D" parent="."]
 position = Vector2(-392, 363)
@@ -25,7 +27,7 @@ shape = SubResource("RectangleShape2D_ut8vy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/PlatformTest/StaticBody2D/CollisionShape2D"]
 modulate = Color(1, 0, 0, 1)
-texture = ExtResource("2_b1an3")
+texture = ExtResource("2_wc7mw")
 
 [node name="PlatformTest2" type="Node2D" parent="Platforms"]
 position = Vector2(917, 118)
@@ -38,7 +40,7 @@ shape = SubResource("RectangleShape2D_ut8vy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/PlatformTest2/StaticBody2D/CollisionShape2D"]
 modulate = Color(1, 0, 0, 1)
-texture = ExtResource("2_b1an3")
+texture = ExtResource("2_wc7mw")
 
 [node name="PlatformTest3" type="Node2D" parent="Platforms"]
 position = Vector2(652, 478)
@@ -51,7 +53,7 @@ shape = SubResource("RectangleShape2D_ut8vy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/PlatformTest3/StaticBody2D/CollisionShape2D"]
 modulate = Color(1, 0, 0, 1)
-texture = ExtResource("2_b1an3")
+texture = ExtResource("2_wc7mw")
 
 [node name="PlatformTest4" type="Node2D" parent="Platforms"]
 position = Vector2(588, -192)
@@ -64,7 +66,7 @@ shape = SubResource("RectangleShape2D_ut8vy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/PlatformTest4/StaticBody2D/CollisionShape2D"]
 modulate = Color(1, 0, 0, 1)
-texture = ExtResource("2_b1an3")
+texture = ExtResource("2_wc7mw")
 
 [node name="PlatformTest5" type="Node2D" parent="Platforms"]
 position = Vector2(734, -555)
@@ -77,7 +79,7 @@ shape = SubResource("RectangleShape2D_ut8vy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/PlatformTest5/StaticBody2D/CollisionShape2D"]
 modulate = Color(1, 0, 0, 1)
-texture = ExtResource("2_b1an3")
+texture = ExtResource("2_wc7mw")
 
 [node name="PlatformTest6" type="Node2D" parent="Platforms"]
 position = Vector2(423, -842)
@@ -90,7 +92,7 @@ shape = SubResource("RectangleShape2D_ut8vy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/PlatformTest6/StaticBody2D/CollisionShape2D"]
 modulate = Color(1, 0, 0, 1)
-texture = ExtResource("2_b1an3")
+texture = ExtResource("2_wc7mw")
 
 [node name="PlatformTest7" type="Node2D" parent="Platforms"]
 position = Vector2(803, -1229)
@@ -103,7 +105,7 @@ shape = SubResource("RectangleShape2D_ut8vy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/PlatformTest7/StaticBody2D/CollisionShape2D"]
 modulate = Color(1, 0, 0, 1)
-texture = ExtResource("2_b1an3")
+texture = ExtResource("2_wc7mw")
 
 [node name="PlatformTest8" type="Node2D" parent="Platforms"]
 position = Vector2(475, -1539)
@@ -116,4 +118,4 @@ shape = SubResource("RectangleShape2D_ut8vy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/PlatformTest8/StaticBody2D/CollisionShape2D"]
 modulate = Color(1, 0, 0, 1)
-texture = ExtResource("2_b1an3")
+texture = ExtResource("2_wc7mw")

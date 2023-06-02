@@ -1,14 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhx0p78rsq1t3"]
 
 [ext_resource type="Script" path="res://playerData.gd" id="1_0rie8"]
-[ext_resource type="Texture2D" uid="uid://bsrwdlpixkaef" path="res://icon.svg" id="2_03cxo"]
 [ext_resource type="Script" path="res://Objects/Scripts/playerJump.gd" id="2_sir8c"]
+[ext_resource type="Texture2D" uid="uid://cnwwtj2b6xnsa" path="res://Assets/Sprites/trigoMan.png" id="3_7mycq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fq2v"]
 size = Vector2(128, 128)
 
 [node name="Player" type="Node2D"]
-position = Vector2(685, 342)
 script = ExtResource("1_0rie8")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -19,11 +18,13 @@ speed = 1200
 jump_speed = -1800
 gravity = 4000
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("RectangleShape2D_3fq2v")
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.0657131, 0.0657131)
+texture = ExtResource("3_7mycq")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D"]
-texture = ExtResource("2_03cxo")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+scale = Vector2(0.451397, 0.906213)
+shape = SubResource("RectangleShape2D_3fq2v")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(87, -6)
