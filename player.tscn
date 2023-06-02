@@ -28,4 +28,4 @@ texture = ExtResource("2_03cxo")
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(87, -6)
 limit_left = 0
-limit_right = 1152
+limit_right = 720
