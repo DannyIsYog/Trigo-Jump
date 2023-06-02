@@ -35,11 +35,11 @@ func _physics_process(delta):
 		velocity.y = jump_speed
 		animationTree.set("parameters/conditions/IsJumping", true)
 		animationTree.set("parameters/conditions/IsNotJumping", false)
-<<<<<<< Updated upstream
+
 		jumpSound.pitch_scale = randf_range(0.5, 1.5)
-=======
+
 		jumpParticles.restart()
->>>>>>> Stashed changes
+
 		jumpSound.play()
 	if Input.is_action_just_pressed("down") and not is_on_floor():
 		velocity.y = -jump_speed
