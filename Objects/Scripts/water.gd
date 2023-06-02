@@ -6,4 +6,5 @@ func _on_body_entered(body):
 		return
 	var player_data = body.get_parent() as PlayerData
 	player_data.life = min(100, player_data.life + 8)
+	body.drinkingSound.play()
 	queue_free()
