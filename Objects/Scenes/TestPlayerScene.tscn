@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0sg7v1xg1m2a"]
+[gd_scene load_steps=5 format=3 uid="uid://b0sg7v1xg1m2a"]
 
 [ext_resource type="PackedScene" uid="uid://dhx0p78rsq1t3" path="res://Objects/Scenes/player.tscn" id="1_rsdyp"]
 [ext_resource type="Texture2D" uid="uid://bsrwdlpixkaef" path="res://icon.svg" id="2_wc7mw"]
+[ext_resource type="PackedScene" uid="uid://5xnwu4g2he6c" path="res://Objects/Scenes/camera_2d.tscn" id="3_hq5tl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ut8vy"]
 size = Vector2(128, 128)
@@ -9,7 +10,7 @@ size = Vector2(128, 128)
 [node name="TestPlayerScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_rsdyp")]
-position = Vector2(264, 665)
+position = Vector2(549, 316)
 life = 100.0
 lifeLossPerSec = 1.0
 
@@ -119,3 +120,5 @@ shape = SubResource("RectangleShape2D_ut8vy")
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/PlatformTest8/StaticBody2D/CollisionShape2D"]
 modulate = Color(1, 0, 0, 1)
 texture = ExtResource("2_wc7mw")
+
+[node name="Camera2D" parent="." instance=ExtResource("3_hq5tl")]

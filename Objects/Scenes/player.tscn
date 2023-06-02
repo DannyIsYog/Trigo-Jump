@@ -10,7 +10,7 @@ size = Vector2(128, 128)
 [node name="Player" type="Node2D"]
 script = ExtResource("1_0rie8")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="PlayerBody" type="CharacterBody2D" parent="."]
 disable_mode = 2
 slide_on_ceiling = false
 script = ExtResource("2_sir8c")
@@ -18,15 +18,10 @@ speed = 1200
 jump_speed = -1800
 gravity = 4000
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="PlayerBody"]
 scale = Vector2(0.0657131, 0.0657131)
 texture = ExtResource("3_7mycq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBody"]
 scale = Vector2(0.451397, 0.906213)
 shape = SubResource("RectangleShape2D_3fq2v")
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(87, -6)
-limit_left = 0
-limit_right = 720
