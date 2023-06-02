@@ -24,7 +24,7 @@ func spawn_platforms(amount: int, spawn_player: bool = false) -> void:
 		
 		platform_spawn.progress_ratio = randf()
 		var first_platform = i == 0 and spawn_player
-		while not first_platform and abs(platform_spawn.position.x - last_platform_x) <= 64:
+		while not first_platform and abs(platform_spawn.position.x - last_platform_x) <= 200:
 			platform_spawn.progress_ratio = randf()
 		
 		platform.position = platform_spawn.position
