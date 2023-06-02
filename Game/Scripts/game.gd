@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func spawn_platforms(amount: int, spawn_player: bool = false) -> void:
 	for i in range(amount):
-		platform_initial_y -= randi_range(296, 396)
+		platform_initial_y -= randi_range(256, 360)
 		var platform = platform_scene.instantiate() as Node2D
 		
 		platform_spawn.progress_ratio = randf()
