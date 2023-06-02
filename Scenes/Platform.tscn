@@ -6,3 +6,4 @@
 
 [node name="Icon" type="Sprite2D" parent="."]
 texture = ExtResource("1_rfjnb")
+centered = false
