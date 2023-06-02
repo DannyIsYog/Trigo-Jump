@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2ipawn00pm2x"]
+
+[ext_resource type="Script" path="res://Objects/Scripts/wine.gd" id="1_fwner"]
+[ext_resource type="Texture2D" uid="uid://bsrwdlpixkaef" path="res://icon.svg" id="2_stin2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbtor"]
+size = Vector2(64, 64)
+
+[node name="Wine" type="Area2D"]
+script = ExtResource("1_fwner")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jbtor")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 1, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_stin2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

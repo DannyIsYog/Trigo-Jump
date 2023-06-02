@@ -9,9 +9,14 @@ extends CharacterBody2D
 @onready var animationTree : AnimationTree = $AnimationTree
 @onready var jumpSound = $AudioStreamPlayer2D
 
+
+func is_drunk() -> bool:
+	return get_parent().is_drunk()
+
+
 func _physics_process(delta):
 	# Add gravity every frame
-	velocity.y += gravity * delta
+	# velocity.y += gravity * delta
 	direction = Input.get_axis("left", "right")
 	# Input affects x axis only
 	velocity.x = Input.get_axis("left", "right") * speed
