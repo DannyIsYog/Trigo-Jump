@@ -31,7 +31,7 @@ func _process(delta):
 		self.limit_bottom = self.position.y + (get_viewport_rect().size.y / 2)
 	
 	score = int((startingY - maxY)/50)
-	player.lifeLossPerSec = 3 + score/50
+	player.lifeLossPerSec = 3 + score/20
 	print(player.lifeLossPerSec)
 	text.text = str(score)
 
