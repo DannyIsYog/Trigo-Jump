@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c6mmueecdubb"]
 
 [ext_resource type="Script" path="res://Objects/Scripts/sobreiro.gd" id="1_6d807"]
-[ext_resource type="Texture2D" uid="uid://88wriiuxap06" path="res://Assets/Sprites/sobreiro.png" id="2_60l5j"]
+[ext_resource type="Texture2D" uid="uid://dqwtctu60hgen" path="res://Assets/Sprites/sobreiro.png" id="2_60l5j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbtor"]
 size = Vector2(128, 128)
@@ -13,7 +13,7 @@ script = ExtResource("1_6d807")
 shape = SubResource("RectangleShape2D_jbtor")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(48, -68)
+position = Vector2(46, -82)
 scale = Vector2(0.561859, 0.561859)
 texture = ExtResource("2_60l5j")
 
