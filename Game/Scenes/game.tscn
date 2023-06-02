@@ -34,4 +34,3 @@ curve = SubResource("Curve2D_lbvoq")
 position = Vector2(-1, 390)
 
 [connection signal="restartGame" from="Camera2D" to="." method="restart"]
-[connection signal="spawnPlatforms" from="Camera2D" to="." method="spawn_platforms"]
