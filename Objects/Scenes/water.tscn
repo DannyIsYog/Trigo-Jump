@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1djivfdelnlw"]
 
 [ext_resource type="Script" path="res://Objects/Scripts/water.gd" id="1_1x7f1"]
-[ext_resource type="Texture2D" uid="uid://bsrwdlpixkaef" path="res://icon.svg" id="1_d1gwf"]
+[ext_resource type="Texture2D" uid="uid://bb11bn3jscomg" path="res://Assets/Sprites/WATER.png" id="2_r7tcv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbtor"]
 size = Vector2(64, 64)
@@ -13,7 +13,9 @@ script = ExtResource("1_1x7f1")
 shape = SubResource("RectangleShape2D_jbtor")
 
 [node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_d1gwf")
+position = Vector2(0, 24)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_r7tcv")
+flip_h = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

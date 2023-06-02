@@ -8,20 +8,17 @@ extends CharacterBody2D
 
 @onready var Sprite : Sprite2D = $Sprite2D
 @onready var animationTree : AnimationTree = $AnimationTree
+@onready var jumpSound = $JumpSound
+@onready var drinkingSound = $Drinking
 
-<<<<<<< Updated upstream
 
 func is_drunk() -> bool:
 	return get_parent().is_drunk()
 
 
-=======
-@onready var jumpSound = $JumpSound
-@onready var drinkingSound = $Drinking
->>>>>>> Stashed changes
 func _physics_process(delta):
 	# Add gravity every frame
-	# velocity.y += gravity * delta
+	velocity.y += gravity * delta
 	direction = Input.get_axis("left", "right")
 	# Input affects x axis only
 	velocity.x = Input.get_axis("left", "right") * speed
