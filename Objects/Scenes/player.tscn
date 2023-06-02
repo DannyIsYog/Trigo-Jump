@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://dxgadne4udv1t" path="res://Assets/Audio/jump.wav" id="10_qjwif"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fq2v"]
-size = Vector2(128, 128)
+size = Vector2(172.797, 201.939)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_npy5w"]
 animation = &"Idle"
@@ -128,10 +128,11 @@ jump_speed = -1800
 gravity = 4000
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerBody"]
-scale = Vector2(0.0657131, 0.0657131)
-texture = ExtResource("8_8s6e4")
+scale = Vector2(0.131005, 0.131005)
+texture = ExtResource("4_4a4qb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBody"]
+position = Vector2(0, 10.5)
 scale = Vector2(0.451397, 0.906213)
 shape = SubResource("RectangleShape2D_3fq2v")
 

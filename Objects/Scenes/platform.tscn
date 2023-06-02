@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://bohw3vx2x6mt8"]
 
-[ext_resource type="Texture2D" uid="uid://bsrwdlpixkaef" path="res://icon.svg" id="1_rfjnb"]
+[ext_resource type="Texture2D" uid="uid://dilptwyxcrdp7" path="res://Assets/Sprites/platform.png" id="1_xibp0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t844c"]
-size = Vector2(128, 128)
+size = Vector2(256.556, 55.125)
 
 [node name="Platform" type="Node2D"]
 
@@ -11,9 +11,11 @@ size = Vector2(128, 128)
 position = Vector2(64, 64)
 disable_mode = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_t844c")
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(64, -33)
+scale = Vector2(0.143981, 0.143981)
+texture = ExtResource("1_xibp0")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
-modulate = Color(1, 0, 0, 1)
-texture = ExtResource("1_rfjnb")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(64.7222, -35.5625)
+shape = SubResource("RectangleShape2D_t844c")
