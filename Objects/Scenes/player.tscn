@@ -116,13 +116,8 @@ _data = {
 }
 
 [node name="Player" type="Node2D"]
-<<<<<<< Updated upstream
-script = ExtResource("1_evdqh")
-life = 100.0
-lifeLossPerSec = 3.0
-=======
 script = ExtResource("1_0rie8")
->>>>>>> Stashed changes
+life = 100.0
 
 [node name="PlayerBody" type="CharacterBody2D" parent="."]
 disable_mode = 2
