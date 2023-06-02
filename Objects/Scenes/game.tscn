@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://f8grf4gkunji"]
+[gd_scene load_steps=5 format=3 uid="uid://f8grf4gkunji"]
 
 [ext_resource type="Script" path="res://Objects/Scripts/game.gd" id="1_uvlhi"]
 [ext_resource type="PackedScene" uid="uid://bohw3vx2x6mt8" path="res://Objects/Scenes/platform.tscn" id="2_ykf48"]
@@ -6,65 +6,21 @@
 
 [sub_resource type="Curve2D" id="Curve2D_lbvoq"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 720, 0)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_h5rls"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 368, 0, 0, 0, 0, 720, 448)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_ax20e"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 720, 640)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_bqvue"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 896, 0, 0, 0, 0, 720, 896)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 640, 0)
 }
 point_count = 2
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_uvlhi")
 platform_scene = ExtResource("2_ykf48")
+player_scene = ExtResource("3_o3ucp")
 
-[node name="PlatformSpawning" type="Node" parent="."]
-
-[node name="PlatformPath1" type="Path2D" parent="PlatformSpawning"]
+[node name="PlatformPath" type="Path2D" parent="."]
+position = Vector2(0, 1200)
 curve = SubResource("Curve2D_lbvoq")
 
-[node name="Spawn" type="PathFollow2D" parent="PlatformSpawning/PlatformPath1"]
-
-[node name="PlatformPath2" type="Path2D" parent="PlatformSpawning"]
-curve = SubResource("Curve2D_h5rls")
-
-[node name="Spawn" type="PathFollow2D" parent="PlatformSpawning/PlatformPath2"]
-position = Vector2(0, 368)
-rotation = 0.110657
-
-[node name="PlatformPath3" type="Path2D" parent="PlatformSpawning"]
-curve = SubResource("Curve2D_ax20e")
-
-[node name="Spawn" type="PathFollow2D" parent="PlatformSpawning/PlatformPath3"]
-position = Vector2(0, 720)
-rotation = -0.110657
-
-[node name="PlatformPath4" type="Path2D" parent="PlatformSpawning"]
-curve = SubResource("Curve2D_bqvue")
-
-[node name="Spawn" type="PathFollow2D" parent="PlatformSpawning/PlatformPath4"]
-position = Vector2(0, 896)
+[node name="Spawn" type="PathFollow2D" parent="PlatformPath"]
 
 [node name="Platforms" type="Node" parent="."]
-
-[node name="Platform" parent="Platforms" instance=ExtResource("2_ykf48")]
-position = Vector2(292, 1152)
-
-[node name="Player" parent="." instance=ExtResource("3_o3ucp")]
-position = Vector2(336, 1056)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
