@@ -1,0 +1,117 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0sg7v1xg1m2a"]
+
+[ext_resource type="PackedScene" uid="uid://dhx0p78rsq1t3" path="res://player.tscn" id="1_rdgwo"]
+[ext_resource type="Texture2D" uid="uid://bsrwdlpixkaef" path="res://icon.svg" id="2_b1an3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ut8vy"]
+size = Vector2(128, 128)
+
+[node name="TestPlayerScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_rdgwo")]
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="PlatformTest" type="Node2D" parent="Platforms"]
+position = Vector2(493, 234)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms/PlatformTest"]
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformTest/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ut8vy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/PlatformTest/StaticBody2D/CollisionShape2D"]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_b1an3")
+
+[node name="PlatformTest2" type="Node2D" parent="Platforms"]
+position = Vector2(917, 118)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms/PlatformTest2"]
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformTest2/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ut8vy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/PlatformTest2/StaticBody2D/CollisionShape2D"]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_b1an3")
+
+[node name="PlatformTest3" type="Node2D" parent="Platforms"]
+position = Vector2(652, 478)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms/PlatformTest3"]
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformTest3/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ut8vy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/PlatformTest3/StaticBody2D/CollisionShape2D"]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_b1an3")
+
+[node name="PlatformTest4" type="Node2D" parent="Platforms"]
+position = Vector2(588, -192)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms/PlatformTest4"]
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformTest4/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ut8vy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/PlatformTest4/StaticBody2D/CollisionShape2D"]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_b1an3")
+
+[node name="PlatformTest5" type="Node2D" parent="Platforms"]
+position = Vector2(734, -555)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms/PlatformTest5"]
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformTest5/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ut8vy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/PlatformTest5/StaticBody2D/CollisionShape2D"]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_b1an3")
+
+[node name="PlatformTest6" type="Node2D" parent="Platforms"]
+position = Vector2(423, -842)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms/PlatformTest6"]
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformTest6/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ut8vy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/PlatformTest6/StaticBody2D/CollisionShape2D"]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_b1an3")
+
+[node name="PlatformTest7" type="Node2D" parent="Platforms"]
+position = Vector2(803, -1229)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms/PlatformTest7"]
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformTest7/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ut8vy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/PlatformTest7/StaticBody2D/CollisionShape2D"]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_b1an3")
+
+[node name="PlatformTest8" type="Node2D" parent="Platforms"]
+position = Vector2(475, -1539)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms/PlatformTest8"]
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformTest8/StaticBody2D"]
+shape = SubResource("RectangleShape2D_ut8vy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/PlatformTest8/StaticBody2D/CollisionShape2D"]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_b1an3")
