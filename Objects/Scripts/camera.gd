@@ -1,10 +1,14 @@
 extends Camera2D
 
-@onready var player = $"../Player"
-var maxY: float
+var player = null
+@export var maxY: float
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if player == null:
+		player = get_parent().get_node("Player")
+		return
+	
 	var nextY = player.get_node("PlayerBody").get_global_position().y
 	if nextY < maxY:
 		self.position.y = nextY
