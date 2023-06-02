@@ -7,6 +7,7 @@ extends Node2D
 @onready var waterBar = $"../Camera2D/Control/waterBar"
 @onready var gameManager = get_parent()
 @export var animation_tree : AnimationTree
+@onready var camera = $"../Camera2D"
 
 var sobreiro = false
 var drunk_for = 0.0
@@ -14,7 +15,7 @@ var drunk_for = 0.0
 
 func _process(delta):
 	if life <= 0:
-		gameManager.restart()
+		gameManager.restart(camera.score)
 	if not sobreiro:
 		life = life - lifeLossPerSec * delta
 	waterBar.value = life
