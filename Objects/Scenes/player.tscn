@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhx0p78rsq1t3"]
 
 [ext_resource type="Script" path="res://playerData.gd" id="1_0rie8"]
-[ext_resource type="Script" path="res://playerJump.gd" id="1_7jx6h"]
 [ext_resource type="Texture2D" uid="uid://bsrwdlpixkaef" path="res://icon.svg" id="2_03cxo"]
+[ext_resource type="Script" path="res://Objects/Scripts/playerJump.gd" id="2_sir8c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fq2v"]
 size = Vector2(128, 128)
@@ -14,7 +14,7 @@ script = ExtResource("1_0rie8")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 disable_mode = 2
 slide_on_ceiling = false
-script = ExtResource("1_7jx6h")
+script = ExtResource("2_sir8c")
 speed = 1200
 jump_speed = -1800
 gravity = 4000
