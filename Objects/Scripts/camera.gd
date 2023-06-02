@@ -32,7 +32,6 @@ func _process(delta):
 	
 	score = int((startingY - maxY)/50)
 	player.lifeLossPerSec = 3 + score/20
-	print(player.lifeLossPerSec)
 	text.text = str(score)
 
 func firstTimeSet():

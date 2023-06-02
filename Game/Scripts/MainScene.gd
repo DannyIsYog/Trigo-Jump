@@ -19,7 +19,6 @@ func _process(delta):
 
 func endGame(score, currentScene):
 	inGame = false
-	print("going to score")
 	self.score = score
 	if score > highScore:
 		highScore = score
