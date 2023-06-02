@@ -10,6 +10,7 @@ extends Node2D
 @onready var platforms = $Platforms
 @onready var platform_spawn = $PlatformPath/Spawn
 @onready var platform_initial_y = $PlatformPath.position.y
+
 var last_platform_x = 0
 
 func _ready() -> void:
@@ -49,6 +50,6 @@ func spawn_platforms(amount: int, spawn_player: bool = false) -> void:
 			sobreiro.position.y = platform_initial_y - 64
 			add_child(sobreiro)
 
-func restart():
-	get_tree().reload_current_scene()
+func restart(score):
+	get_parent().endGame(score, self)
 	

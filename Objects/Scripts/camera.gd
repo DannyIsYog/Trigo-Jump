@@ -8,7 +8,7 @@ var startingY: float
 
 var score: int
 
-signal restartGame
+signal restartGame(score: int)
 signal spawnPlatforms(number_of_platforms: int, spawn_player: bool)
 signal updateScore(score: int)
 
@@ -45,7 +45,7 @@ func firstTimeSet():
 	firstTime = false
 
 func restartGameFunc():
-	restartGame.emit()
+	restartGame.emit(score)
 
 
 func _on_area_2d_spawn_platforms(number_of_platforms):

@@ -26,6 +26,7 @@ offset_right = 722.0
 offset_bottom = 643.0
 
 [node name="ScoreText" type="RichTextLabel" parent="Control"]
+layout_mode = 0
 offset_left = 17.0
 offset_top = 26.0
 offset_right = 220.0

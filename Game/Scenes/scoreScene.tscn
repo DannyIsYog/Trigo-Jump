@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5mjs530xf1wh"]
+
+[ext_resource type="Script" path="res://Game/Scripts/score.gd" id="1_gm6q6"]
+
+[node name="RichTextLabel" type="RichTextLabel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 36.0
+offset_top = 631.0
+offset_right = 701.0
+offset_bottom = 1056.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]Score: 100m[/center]"
+scroll_active = false
+script = ExtResource("1_gm6q6")
