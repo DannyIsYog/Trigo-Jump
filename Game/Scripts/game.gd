@@ -34,3 +34,7 @@ func spawn_platforms(amount: int, spawn_player: bool = false) -> void:
 			player.position.x = platform.position.x + 64
 			player.position.y = platform_initial_y - 64
 			add_child(player)
+
+func restart():
+	get_tree().reload_current_scene()
+	

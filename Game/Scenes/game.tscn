@@ -28,3 +28,5 @@ curve = SubResource("Curve2D_lbvoq")
 
 [node name="Camera2D" parent="." instance=ExtResource("4_n7vlc")]
 position = Vector2(-1, 390)
+
+[connection signal="restartGame" from="Camera2D" to="." method="restart"]
