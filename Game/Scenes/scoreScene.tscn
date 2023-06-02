@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5mjs530xf1wh"]
+[gd_scene load_steps=3 format=3 uid="uid://c5mjs530xf1wh"]
 
 [ext_resource type="Script" path="res://Game/Scripts/score.gd" id="1_gm6q6"]
+[ext_resource type="Texture2D" uid="uid://bn0moyd2ikiyt" path="res://Assets/Sprites/Background.png" id="2_q8hqm"]
 
 [node name="RichTextLabel" type="RichTextLabel"]
 anchors_preset = 8
@@ -20,3 +21,10 @@ bbcode_enabled = true
 text = "[center]Score: 100m[/center]"
 scroll_active = false
 script = ExtResource("1_gm6q6")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground"]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_q8hqm")
+centered = false
